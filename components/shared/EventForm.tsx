@@ -12,10 +12,12 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import React from "react";
 import { eventFormSchema } from "@/lib/validator";
 import * as z from "zod";
 import { eventDefaultValues } from "@/constants";
+import Dropdown from "./Dropdown";
 
 type EventFormProps = {
   userId: string;
@@ -57,7 +59,42 @@ const EventForm = ({ userId, type }: EventFormProps) => {
               </FormItem>
             )}
           />
+          <FormField
+            control={form.control}
+            name="title"
+            render={({ field }) => (
+              <FormItem className="w-full">
+                <FormControl>
+                  <Dropdown
+                    onChangeHandler={field.onChange}
+                    value={field.value}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
         </div>
+
+        <div className="flex flex-col gap-5 md:flex-row">
+          <FormField
+            control={form.control}
+            name="description"
+            render={({ field }) => (
+              <FormItem className="w-full">
+                <FormControl className="h-72">
+                  <Textarea
+                    placeholder="Description"
+                    {...field}
+                    className="textarea rounded-2xl"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>
