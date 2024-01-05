@@ -19,6 +19,7 @@ import * as z from "zod";
 import { eventDefaultValues } from "@/constants";
 import Dropdown from "./Dropdown";
 import { FileUploader } from "./FileUploader";
+import Image from "next/image";
 
 type EventFormProps = {
   userId: string;
@@ -113,7 +114,32 @@ const EventForm = ({ userId, type }: EventFormProps) => {
           />
         </div>
 
-        <div className="flex flex-col gap-5 md:flex-row"></div>
+        <div className="flex flex-col gap-5 md:flex-row">
+          <FormField
+            control={form.control}
+            name="location"
+            render={({ field }) => (
+              <FormItem className="w-full">
+                <FormControl>
+                  <div className="flex-center h-[55px] w-full overflow-hidden rounded-full bg-gray-50 px-4 py-2">
+                    <Image
+                      src="/assets/icons/location-grey.svg"
+                      alt="calender"
+                      width={24}
+                      height={24}
+                    />
+                    <Input
+                      placeholder="Event Location or Online"
+                      {...field}
+                      className="input-field"
+                    />
+                  </div>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
 
         <Button type="submit">Submit</Button>
       </form>
