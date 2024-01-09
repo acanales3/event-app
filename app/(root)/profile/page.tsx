@@ -3,18 +3,22 @@ import { Button } from "@/components/ui/button";
 import { getEventsByUser } from "@/lib/actions/event.actions";
 import { getOrdersByUser } from "@/lib/actions/order.actions";
 import { IOrder } from "@/lib/database/models/order.model";
+import { SearchParamProps } from "@/types";
 import { auth } from "@clerk/nextjs";
 import Link from "next/link";
 import React from "react";
 
-const ProfilePage = async () => {
+const ProfilePage = async ({ searchParams }: SearchParamProps) => {
   const { sessionClaims } = auth();
   const userId = sessionClaims?.userId as string;
 
-  const orders = await getOrdersByUser({ userId, page: 1 });
+  const numOrdersPages = Number(searchParams?.ordersPage) || 1;
+  const numEventsPages = Number(searchParams?.ordersPage) || 1;
+
+  const orders = await getOrdersByUser({ userId, page: numOrdersPages });
   const orderedEvents = orders?.data.map((order: IOrder) => order.event || []);
 
-  const organizedEvents = await getEventsByUser({ userId, page: 1 });
+  const myEvents = await getEventsByUser({ userId, page: numEventsPages });
 
   return (
     <>
@@ -34,9 +38,9 @@ const ProfilePage = async () => {
           emptyStateSubtext="No Worries, Plenty of Exciting Events to Explore!"
           collectionType="My_Tickets"
           limit={3}
-          page={1}
+          page={numOrdersPages}
           urlParamName="ordersPage"
-          totalPages={2}
+          totalPages={orders?.totalPages}
         />
       </section>
 
@@ -51,14 +55,14 @@ const ProfilePage = async () => {
 
       <section className="wrapper my-8">
         <Collection
-          data={organizedEvents?.data}
+          data={myEvents?.data}
           emptyTitle="You Have Not Created Any Events"
           emptyStateSubtext="Go Create Some!"
           collectionType="Events_Organized"
           limit={6}
-          page={1}
+          page={numEventsPages}
           urlParamName="eventsPage"
-          totalPages={2}
+          totalPages={myEvents?.totalPages}
         />
       </section>
     </>
