@@ -11,7 +11,7 @@ type CardProps = {
   hasOrderLink?: boolean;
   hidePrice?: boolean;
 };
-
+//push
 const Card = ({ event, hasOrderLink, hidePrice }: CardProps) => {
   const { sessionClaims } = auth();
   const userId = sessionClaims?.userId as string;
