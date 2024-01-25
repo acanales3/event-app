@@ -10,13 +10,8 @@ const header = () => {
   return (
     <header className="w-full border-b">
       <div className="wrapper flex items-center justify-between">
-        <Link href="/" className="w-36">
-          <Image
-            src="/assets/images/logo.svg"
-            width={128}
-            height={38}
-            alt="ScriptNest logo"
-          />
+        <Link href="/" className="w-36 text-primary-500 font-semibold">
+          Script Nest
         </Link>
 
         <SignedIn>
@@ -42,3 +37,12 @@ const header = () => {
 };
 
 export default header;
+
+/*
+<Image
+            src="/assets/images/logo.svg"
+            width={128}
+            height={38}
+            alt="ScriptNest logo"
+          />
+*/

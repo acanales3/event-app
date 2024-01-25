@@ -6,18 +6,21 @@ const Footer = () => {
   return (
     <footer className="border-t">
       <div className="flex-center wrapper flex-between flex flex-col gap-4 p-5 text-center sm:flex-row">
-        <Link href="/">
-          <Image
-            src="/assets/images/logo.svg"
-            alt="logo"
-            width={128}
-            height={38}
-          />
-        </Link>
-        <p>2023 Evently. All Rights Reserved</p>
+        <Link href="/">Script Nest</Link>
+        <p>2024 Script Nest. All Rights Reserved</p>
+        <Link href="/privacy">Privacy</Link>
       </div>
     </footer>
   );
 };
 
 export default Footer;
+
+/*
+<Image
+            src="/assets/images/logo.svg"
+            alt="logo"
+            width={128}
+            height={38}
+          />
+*/
