@@ -10,9 +10,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Evently",
+  title: "Script Nest",
   description:
-    "Evently is a platform for managing different events in the world of tech!",
+    "Script Nest is a TCU focused platform for Computer Science Students!",
   icons: {
     icon: "/assets/images/logo.svg",
   },
