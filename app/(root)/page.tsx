@@ -27,23 +27,23 @@ export default async function Home({ searchParams }: SearchParamProps) {
         <div className="wrapper grid grid-cols-1 md:grid-cols-2 2xl:gap-0">
           <div className="flex flex-col justify-center gap-8">
             <h1 className="h1-bold">
-              Host and Connect to a multitude of Computer Science Related
-              Events!
+              Take a look at all Computer Science events happening now!
             </h1>
             <p className="p-regular-20 md:p-regular-24">
-              Take a list of all the events planned for the future! Learn,
-              engage, and meet people in the computer science community!
+              Take a look at all the events planned for the future! Learn,
+              engage, host, and connect with people in the computer science
+              community!
             </p>
             <Button size="lg" asChild className="button w-full sm:w-fit">
               <Link href="#events">Explore Now</Link>
             </Button>
           </div>
           <Image
-            src="/assets/images/hero.png"
+            src="/assets/images/scriptNestImg.svg"
             alt="hero"
             width={1000}
             height={1000}
-            className="max-h-[70vh] object-contain object-center 2xl:max-h-[50vh]"
+            className="max-h-[70vh] object-contain object-center 2xl:max-h-[50vh] pt-5"
           />
         </div>
       </section>

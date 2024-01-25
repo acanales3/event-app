@@ -49,7 +49,7 @@ const Orders = async ({ searchParams }: SearchParamProps) => {
                       className="p-regular-14 lg:p-regular-16 border-b "
                       style={{ boxSizing: "border-box" }}
                     >
-                      <td className="min-w-[250px] py-4 text-primary-500">
+                      <td className="min-w-[250px] py-4 text-[#451675]">
                         {row._id}
                       </td>
                       <td className="min-w-[200px] flex-1 py-4 pr-4">

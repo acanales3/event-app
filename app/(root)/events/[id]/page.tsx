@@ -48,7 +48,7 @@ const EventDetails = async ({
 
                 <p className="p-medium-18 ml-2 mt-2 sm:mt-0">
                   by{" "}
-                  <span className="text-primary-500">
+                  <span className="text-[#451675]">
                     {event.organizer.firstName} {event.organizer.lastName}
                   </span>
                 </p>
@@ -89,7 +89,7 @@ const EventDetails = async ({
             <div className="flex flex-col gap-2">
               <p className="p-bold-20 text-gray-600">Description:</p>
               <p className="p-medium-16 lg:p-regular-18">{event.description}</p>
-              <p className="p-medium-16 lg:p-regular-18 truncate text-primary-500 underline">
+              <p className="p-medium-16 lg:p-regular-18 truncate text-[#451675] underline">
                 {event.url}
               </p>
             </div>
