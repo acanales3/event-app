@@ -10,7 +10,7 @@ const header = () => {
   return (
     <header className="w-full border-b">
       <div className="wrapper flex items-center justify-between">
-        <Link href="/" className="w-36 text-[#451675] font-semibold">
+        <Link href="/" className="w-36 text-primary-500 font-semibold">
           <Image
             src="/assets/images/SN_name.svg"
             width={128}
