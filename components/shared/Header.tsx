@@ -11,7 +11,12 @@ const header = () => {
     <header className="w-full border-b">
       <div className="wrapper flex items-center justify-between">
         <Link href="/" className="w-36 text-[#451675] font-semibold">
-          Script Nest
+          <Image
+            src="/assets/images/SN_name.svg"
+            width={128}
+            height={38}
+            alt="ScriptNest logo"
+          />
         </Link>
 
         <SignedIn>
