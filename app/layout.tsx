@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description:
     "Script Nest is a TCU focused platform for Computer Science Students!",
   icons: {
-    icon: "/assets/images/logo.svg",
+    icon: "/assets/images/SN_logo.svg",
   },
 };
 

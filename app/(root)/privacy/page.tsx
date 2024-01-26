@@ -4,7 +4,7 @@ const PrivacyPage = () => {
   return (
     <div className="bg-primary-50 bg-dotted-pattern">
       <section className="wrapper text-center py-10">
-        <h1 className="h1-bold text-[#451675] py-10">
+        <h1 className="h1-bold text-primary-500 py-10">
           Privacy Policy for Script Nest
         </h1>
         <h5 className="h5-bold">Last Updated: January 24th, 2024</h5>
