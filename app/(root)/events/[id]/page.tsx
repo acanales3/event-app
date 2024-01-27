@@ -114,5 +114,3 @@ const EventDetails = async ({
 };
 
 export default EventDetails;
-
-//className="h-full min-h-[300px] object-cover object-center"

@@ -42,12 +42,3 @@ const header = () => {
 };
 
 export default header;
-
-/*
-<Image
-            src="/assets/images/logo.svg"
-            width={128}
-            height={38}
-            alt="ScriptNest logo"
-          />
-*/
