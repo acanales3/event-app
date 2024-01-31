@@ -35,6 +35,15 @@ const Dropdown = ({ value, onChangeHandler }: DropDownProps) => {
   const [newCategory, setNewCategory] = useState("");
 
   const handleAddCategory = () => {
+    if (
+      categories.some(
+        (category) =>
+          category.name.toLowerCase() === newCategory.trim().toLowerCase()
+      )
+    ) {
+      return;
+    }
+
     createCategory({
       categoryName: newCategory.trim(),
     }).then((category) => {
