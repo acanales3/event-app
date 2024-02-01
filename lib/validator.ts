@@ -11,20 +11,10 @@ export const eventFormSchema = z.object({
     .string()
     .min(5, "Location must be at least 5 characters")
     .max(300, "Location must be smaller than 300 characters"),
-  imageUrl: z.string().refine(
-    (value) => {
-      value !== null;
-    },
-    { message: "Please choose an image" }
-  ),
+  imageUrl: z.string(),
   startDateTime: z.date(),
   endDateTime: z.date(),
-  categoryId: z.string().refine(
-    (value) => {
-      value !== null;
-    },
-    { message: "Please select a category" }
-  ),
+  categoryId: z.string(),
   price: z.string(),
   isFree: z.boolean(),
   url: z.string().url(),
